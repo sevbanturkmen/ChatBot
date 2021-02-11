@@ -1,17 +1,25 @@
-import {SEND_MESSAGE} from '../actions/types';
+import {SEND_MESSAGE, GET_MESSAGE} from '../actions/types';
 
 const initialState = {
-  message: [],
+  messageSend: [],
 };
 
 export default function messageReducer(state = initialState, action) {
   switch (action.type) {
-    case SEND_MESSAGE:
-      console.log(action.payload);
+    case SEND_MESSAGE: {
+      const message = [...state.messageSend, action.payload];
       return {
         ...state,
-        message: action.payload,
+        messageSend: message,
       };
+    }
+    case GET_MESSAGE: {
+      const message2 = [...state.messageSend, action.payload];
+      return {
+        ...state,
+        messageSend: message2,
+      };
+    }
     default:
       return {
         ...state,

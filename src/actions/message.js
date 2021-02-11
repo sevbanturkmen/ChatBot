@@ -1,9 +1,18 @@
-import {SEND_MESSAGE} from './types';
+import {SEND_MESSAGE, GET_MESSAGE} from './types';
+import store from '../store';
 
-// fetch user's analysis
-export const sendMessages = (message) => (dispatch) => {
-  dispatch({
+export const sendMessages = (content) => {
+  store.dispatch({
     type: SEND_MESSAGE,
-    payload: message,
+    payload: {
+      ...content,
+    },
+  });
+};
+
+export const recieveMessage = (content) => {
+  store.dispatch({
+    type: GET_MESSAGE,
+    payload: {...content},
   });
 };

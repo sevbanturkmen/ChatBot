@@ -15,10 +15,7 @@ class Text2 extends Component {
           }}>
           <View style={{padding: 20}}>
             <Text style={{fontWeight: 'bold', fontSize: 18}}>Bot</Text>
-            <Text style={{marginTop: 5}}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor{' '}
-            </Text>
+            <Text style={{marginTop: 5}}>lorem</Text>
           </View>
         </View>
       </View>
