@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   logoView: {
-    marginTop: '30%',
+    marginTop: '20%',
   },
   logoText: {
     fontSize: 110,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   bottomView: {
-    marginTop: '50%',
+    marginTop: '40%',
     width: '80%',
     alignItems: 'center',
   },

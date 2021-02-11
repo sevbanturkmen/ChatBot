@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: '#dedede',
     borderRadius: 30,
+    padding: 10,
   },
   sendMessageButton: {},
   sendMessageIcon: {

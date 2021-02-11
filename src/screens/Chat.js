@@ -30,15 +30,34 @@ class Chat extends Component {
 
   sendMessage = () => {
     const {message} = this.state;
-    var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss a');
     var id = 1;
-    sendMessages({message, date, id});
-    this.recieve();
-    this.textInput.clear();
+    if (message == '') {
+    } else {
+      var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss a');
+      sendMessages({message, date, id});
+      this.recieve();
+      this.textInput.clear();
+      this.setState({message: ''});
+    }
   };
 
   recieve() {
-    let message = 'lorem ipsum';
+    let message = '';
+    let message1 = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.`;
+    let message2 = `Contrary to popular belief, Lorem Ipsum is not simply random text.`;
+    let message3 =
+      'Thanks for considering me, I tried to do my best in one day I hope it was enough :)';
+    let message4 = 'Lorem ipsum';
+    var number = Math.floor(Math.random() * 4) + 0;
+    if (number == 0) {
+      message = message1;
+    } else if (number == 1) {
+      message = message2;
+    } else if (number == 2) {
+      message = message4;
+    } else {
+      message = message3;
+    }
     var id = 2;
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -47,14 +66,6 @@ class Chat extends Component {
       }, 5000);
     });
   }
-
-  // showRecievedMessages = () => {
-  //   const {messageRecieved} = this.props;
-  //   console.log(messageRecieved);
-  //   return _.sortBy(messageRecieved, ['date']).map((item) => (
-  //     <Text2 data={item.message} />
-  //   ));
-  // };
 
   showSentMessages = () => {
     const {messageSend} = this.props;
@@ -78,10 +89,10 @@ class Chat extends Component {
             ref={(scrollView) => {
               this.scrollView = scrollView;
             }}
+            onContentSizeChange={() => this.scrollView.scrollToEnd()}
             style={{height: height - 190}}>
-            <Text2 data="loremelrkşelerl" />
+            <Text2 data="Hoşgeldiniz, size nasıl yardımcı olabilirim?" />
             {this.showSentMessages()}
-            {/* {this.showRecievedMessages()} */}
           </ScrollView>
           <View style={styles.typeTextView}>
             <TextInput

@@ -25,7 +25,7 @@ class Splash extends Component {
             </View>
             <View style={styles.bottomView}>
               <Text style={styles.infoText}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit
               </Text>
               <TouchableOpacity
                 onPress={() => this.navigation.navigate('Chat')}

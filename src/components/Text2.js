@@ -15,7 +15,9 @@ class Text2 extends Component {
           }}>
           <View style={{padding: 20}}>
             <Text style={{fontWeight: 'bold', fontSize: 18}}>Bot</Text>
-            <Text style={{marginTop: 5}}>lorem</Text>
+            <Text style={{marginTop: 5, lineHeight: 20}}>
+              {this.props.data}
+            </Text>
           </View>
         </View>
       </View>
