@@ -29,9 +29,10 @@ class Chat extends Component {
   navigation = this.props.navigation;
 
   sendMessage = () => {
-    const {message} = this.state;
+    var {message} = this.state;
     var id = 1;
-    if (message == '') {
+    message = message.trim();
+    if (message == '' || !message.replace(/\s/g, '').length) {
     } else {
       var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss a');
       sendMessages({message, date, id});
@@ -82,32 +83,41 @@ class Chat extends Component {
     return (
       <View style={styles.mainView}>
         <Header navigation={this.props.navigation} />
-        <ScrollView style={{height: height}}>
+        <ScrollView
+          ref={(scrollView) => {
+            this.scrollView = scrollView;
+          }}
+          style={{height: height}}
+          keyboardShouldPersistTaps="true">
           <ScrollView
-            ref={(scrollView) => {
-              this.scrollView = scrollView;
-            }}
             onContentSizeChange={() => this.scrollView.scrollToEnd()}
-            style={{height: height - 190}}>
+            contentContainerStyle={{
+              justifyContent: 'flex-end',
+              minHeight: height - 180,
+            }}>
             <Text2 data="Hoşgeldiniz, size nasıl yardımcı olabilirim?" />
             {this.showSentMessages()}
           </ScrollView>
-          <View style={styles.typeTextView}>
-            <TextInput
-              placeholder="Bir şeyler yazın."
-              onChangeText={(e) => this.setState({message: e})}
-              style={styles.textInput}
-              ref={(input) => {
-                this.textInput = input;
-              }}
-            />
-            <TouchableOpacity
-              onPress={() => this.sendMessage()}
-              style={styles.sendMessageButton}>
-              <Image source={sendMessage} style={styles.sendMessageIcon} />
-            </TouchableOpacity>
-          </View>
         </ScrollView>
+        <View
+          style={styles.typeTextView}
+          onTouchStart={() => this.scrollView.scrollToEnd()}>
+          <TextInput
+            placeholder="Bir şeyler yazın."
+            onChangeText={(e) => {
+              this.setState({message: e}), this.scrollView.scrollToEnd();
+            }}
+            style={styles.textInput}
+            ref={(input) => {
+              this.textInput = input;
+            }}
+          />
+          <TouchableOpacity
+            onPress={() => this.sendMessage()}
+            style={styles.sendMessageButton}>
+            <Image source={sendMessage} style={styles.sendMessageIcon} />
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }

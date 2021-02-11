@@ -39,6 +39,8 @@ class Settings extends Component {
     if (id == 0) {
       if (phoneNumber !== '' && phoneNumber !== 'HEMŞİRE SEÇİN') {
         Linking.openURL(`tel:${this.state.phoneNumber}`);
+      } else {
+        alert('Hemşire Seçiniz.');
       }
     } else {
       Linking.openURL(`tel:${'8888888888'}`);
@@ -161,21 +163,29 @@ class Settings extends Component {
                 width: '90%',
                 alignSelf: 'center',
               }}>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <View>
-                  <Text style={{color: 'white', fontSize: 11}}>
-                    KULLANICI TİPİ
-                  </Text>
-                  <Text
-                    style={{fontWeight: 'bold', color: 'white', fontSize: 16}}>
-                    {this.state.value}
-                  </Text>
-                </View>
-                <TouchableOpacity onPress={() => this.select(0)}>
+              <TouchableOpacity onPress={() => this.select(0)}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <View>
+                    <Text style={{color: 'white', fontSize: 11}}>
+                      KULLANICI TİPİ
+                    </Text>
+                    <Text
+                      style={{
+                        fontWeight: 'bold',
+                        color: 'white',
+                        fontSize: 16,
+                      }}>
+                      {this.state.value}
+                    </Text>
+                  </View>
+
                   <Image source={pick} style={{height: 25, width: 25}} />
-                </TouchableOpacity>
-              </View>
+                </View>
+              </TouchableOpacity>
             </View>
 
             <View
@@ -187,25 +197,29 @@ class Settings extends Component {
                 width: '90%',
                 alignSelf: 'center',
               }}>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <View>
-                  <Text style={{color: 'white', fontSize: 11}}>
-                    BESLENME YÖNTEMİ
-                  </Text>
-                  <Text
-                    style={{
-                      fontWeight: 'bold',
-                      color: 'white',
-                      fontSize: 16,
-                    }}>
-                    {this.state.value1}
-                  </Text>
-                </View>
-                <TouchableOpacity onPress={() => this.select(1)}>
+              <TouchableOpacity onPress={() => this.select(1)}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <View>
+                    <Text style={{color: 'white', fontSize: 11}}>
+                      BESLENME YÖNTEMİ
+                    </Text>
+                    <Text
+                      style={{
+                        fontWeight: 'bold',
+                        color: 'white',
+                        fontSize: 16,
+                      }}>
+                      {this.state.value1}
+                    </Text>
+                  </View>
+
                   <Image source={pick} style={{height: 25, width: 25}} />
-                </TouchableOpacity>
-              </View>
+                </View>
+              </TouchableOpacity>
             </View>
 
             <View
@@ -217,21 +231,28 @@ class Settings extends Component {
                 width: '90%',
                 alignSelf: 'center',
               }}>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <View>
-                  <Text style={{color: 'white', fontSize: 11}}>
-                    UYGULAMA ŞEKLİ
-                  </Text>
-                  <Text
-                    style={{fontWeight: 'bold', color: 'white', fontSize: 16}}>
-                    {this.state.value2}
-                  </Text>
-                </View>
-                <TouchableOpacity onPress={() => this.select(2)}>
+              <TouchableOpacity onPress={() => this.select(2)}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <View>
+                    <Text style={{color: 'white', fontSize: 11}}>
+                      UYGULAMA ŞEKLİ
+                    </Text>
+                    <Text
+                      style={{
+                        fontWeight: 'bold',
+                        color: 'white',
+                        fontSize: 16,
+                      }}>
+                      {this.state.value2}
+                    </Text>
+                  </View>
                   <Image source={pick} style={{height: 25, width: 25}} />
-                </TouchableOpacity>
-              </View>
+                </View>
+              </TouchableOpacity>
             </View>
 
             <View
@@ -256,21 +277,28 @@ class Settings extends Component {
                 width: '90%',
                 alignSelf: 'center',
               }}>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <View>
-                  <Text style={{color: 'white', fontSize: 11}}>
-                    {this.state.value3}
-                  </Text>
-                  <Text
-                    style={{fontWeight: 'bold', color: 'white', fontSize: 16}}>
-                    {this.state.phoneNumber}
-                  </Text>
-                </View>
-                <TouchableOpacity onPress={() => this.select(3)}>
+              <TouchableOpacity onPress={() => this.select(3)}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <View>
+                    <Text style={{color: 'white', fontSize: 11}}>
+                      {this.state.value3}
+                    </Text>
+                    <Text
+                      style={{
+                        fontWeight: 'bold',
+                        color: 'white',
+                        fontSize: 16,
+                      }}>
+                      {this.state.phoneNumber}
+                    </Text>
+                  </View>
                   <Image source={pick} style={{height: 25, width: 25}} />
-                </TouchableOpacity>
-              </View>
+                </View>
+              </TouchableOpacity>
             </View>
 
             <View style={{alignItems: 'center'}}>

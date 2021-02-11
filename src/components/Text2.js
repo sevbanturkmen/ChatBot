@@ -5,19 +5,21 @@ const avatar = require('../assets/avatar.png');
 class Text2 extends Component {
   render() {
     return (
-      <View style={{flexDirection: 'row', marginTop: 20}}>
-        <Image source={avatar} style={{height: 60, width: 60}} />
-        <View
-          style={{
-            width: '70%',
-            backgroundColor: '#eeecf3',
-            borderRadius: 20,
-          }}>
-          <View style={{padding: 20}}>
-            <Text style={{fontWeight: 'bold', fontSize: 18}}>Bot</Text>
-            <Text style={{marginTop: 5, lineHeight: 20}}>
-              {this.props.data}
-            </Text>
+      <View style={{justifyContent: 'flex-end'}}>
+        <View style={{flexDirection: 'row', marginTop: 20}}>
+          <Image source={avatar} style={{height: 60, width: 60}} />
+          <View
+            style={{
+              width: '65%',
+              backgroundColor: '#eeecf3',
+              borderRadius: 20,
+            }}>
+            <View style={{padding: 20}}>
+              <Text style={{fontWeight: 'bold', fontSize: 18}}>Bot</Text>
+              <Text style={{marginTop: 5, lineHeight: 20}}>
+                {this.props.data}
+              </Text>
+            </View>
           </View>
         </View>
       </View>

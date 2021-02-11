@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, Image, Modal} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  Modal,
+  ScrollView,
+} from 'react-native';
 const x = require('../assets/x.png');
 
 class ModalComponent extends Component {
@@ -19,9 +26,10 @@ class ModalComponent extends Component {
         onRequestClose={() => {
           this.props.dismiss();
         }}>
-        <View
+        <ScrollView
           style={{
             width: '80%',
+            height: '64%',
             backgroundColor: 'gray',
             position: 'absolute',
             alignSelf: 'center',
@@ -60,7 +68,7 @@ class ModalComponent extends Component {
               </Text>
             </TouchableOpacity>
           ))}
-        </View>
+        </ScrollView>
       </Modal>
     );
   }

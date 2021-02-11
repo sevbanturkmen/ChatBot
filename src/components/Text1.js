@@ -7,7 +7,7 @@ class Text1 extends Component {
       <View>
         <View
           style={{
-            width: '70%',
+            width: '65%',
             backgroundColor: '#5b448f',
             borderRadius: 20,
             alignSelf: 'flex-end',

@@ -20,6 +20,18 @@ export const applicationType = [
   {value: 'DAMLA 3', id: 3, catID: 2},
   {value: 'DAMLA 4', id: 4, catID: 2},
   {value: 'DAMLA 5', id: 5, catID: 2},
+  {value: 'DAMLA 6', id: 6, catID: 2},
+  {value: 'DAMLA 7', id: 7, catID: 2},
+  {value: 'DAMLA 8', id: 8, catID: 2},
+  {value: 'DAMLA 9', id: 9, catID: 2},
+  {value: 'DAMLA 10', id: 10, catID: 2},
+  {value: 'DAMLA 11', id: 11, catID: 2},
+  {value: 'DAMLA 12', id: 12, catID: 2},
+  {value: 'DAMLA 13', id: 13, catID: 2},
+  {value: 'DAMLA 14', id: 14, catID: 2},
+  {value: 'DAMLA 15', id: 15, catID: 2},
+  {value: 'DAMLA 16', id: 16, catID: 2},
+  {value: 'DAMLA 17', id: 17, catID: 2},
 ];
 
 export const nurseInfo = [
