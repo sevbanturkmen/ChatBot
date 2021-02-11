@@ -48,7 +48,8 @@ class Chat extends Component {
     let message3 =
       'Thanks for considering me, I tried to do my best in one day I hope it was enough :)';
     let message4 = 'Lorem ipsum';
-    var number = Math.floor(Math.random() * 4) + 0;
+    var number = Math.floor(Math.random() * 5) + 0;
+    console.log(number);
     if (number == 0) {
       message = message1;
     } else if (number == 1) {
@@ -59,22 +60,19 @@ class Chat extends Component {
       message = message3;
     }
     var id = 2;
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss a');
-        recieveMessage({date, message, id});
-      }, 5000);
-    });
+    setTimeout(() => {
+      var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss a');
+      recieveMessage({date, message, id});
+    }, 5000);
   }
 
   showSentMessages = () => {
     const {messageSend} = this.props;
-    console.log(messageSend);
-    return _.sortBy(messageSend, ['date']).map((item) => {
+    return _.sortBy(messageSend, ['date']).map((item, i) => {
       if (item.id == 1) {
-        return <Text1 data={item.message} />;
+        return <Text1 key={i} data={item.message} />;
       } else {
-        return <Text2 data={item.message} />;
+        return <Text2 key={i} data={item.message} />;
       }
     });
   };
@@ -96,6 +94,7 @@ class Chat extends Component {
           </ScrollView>
           <View style={styles.typeTextView}>
             <TextInput
+              placeholder="Bir şeyler yazın."
               onChangeText={(e) => this.setState({message: e})}
               style={styles.textInput}
               ref={(input) => {
